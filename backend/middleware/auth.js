@@ -1,4 +1,4 @@
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 //jwt middlware
 export const verifyToken = (req, res, next) => {
