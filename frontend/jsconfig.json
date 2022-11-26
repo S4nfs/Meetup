@@ -1,5 +1,4 @@
 {
-  //giving baseurl while import files from other files, start with src
   "compilerOptions": {
     "baseUrl": "src"
   },
