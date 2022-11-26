@@ -1,13 +1,12 @@
-import { StarRate } from "@mui/icons-material";
 import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
-    mode: "Light",
+    mode: "light",
     user: null,
     token: null,
     posts: []
 }
 
-export const authSlice = createSlice({
+export const authSlice = createSlice({  //action+reducer hybrid form redux toolkit
     name: "auth",
     initialState,
     reducers: {
@@ -19,11 +18,11 @@ export const authSlice = createSlice({
             state.token = action.payload.token;
         },
         setLogout: (state) => {
-            state.user = null,
-                state.token = null
+            state.user = null;
+            state.token = null;
         },
         setFriends: (state, action) => {
-            if (State.user) {
+            if (state.user) {
                 state.user.friends = action.payload.friends;
             } else {
                 console.log("user friends non existent :(");
@@ -41,3 +40,6 @@ export const authSlice = createSlice({
         }
     }
 })
+
+export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } = authSlice.actions;
+export default authSlice.reducer;
